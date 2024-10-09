@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çalışan Yönetim Uygulaması</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, select {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            margin: 5px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Çalışan Yönetim Uygulaması</h2>
+
+        <!-- Çalışan Ekleme Formu -->
+        <h3>Çalışan Ekle</h3>
+        <input type="text" id="isim" placeholder="İsim"><br>
+        <input type="number" id="yas" placeholder="Yaş"><br>
+        <input type="text" id="departman" placeholder="Departman"><br>
+        <input type="number" id="maas" placeholder="Maaş"><br>
+        <button onclick="calisanEkle()">Çalışan Ekle</button><br>
+
+        <!-- Çalışan Güncelleme Formu -->
+        <h3>Çalışan Güncelle</h3>
+        <input type="text" id="guncelleIsim" placeholder="Güncellenecek İsim"><br>
+        <input type="text" id="yeniDepartman" placeholder="Yeni Departman"><br>
+        <input type="number" id="yeniMaas" placeholder="Yeni Maaş"><br>
+        <button onclick="calisanGuncelle()">Çalışan Güncelle</button><br>
+
+        <!-- Çalışan Silme Formu -->
+        <h3>Çalışan Sil</h3>
+        <input type="text" id="silIsim" placeholder="Silinecek İsim"><br>
+        <button onclick="calisanSil()">Çalışan Sil</button><br>
+
+        <!-- Çalışan Listeleme -->
+        <h3>Çalışan Listele</h3>
+        <select id="listelemeTuru">
+            <option value="tum">Tüm Çalışanlar</option>
+            <option value="departman">Departmana Göre</option>
+            <option value="maasArtan">Maaş (Artan)</option>
+            <option value="maasAzalan">Maaş (Azalan)</option>
+            <option value="maasFiltresi">Maaşı 5000 TL'nin Altında Olanlar</option>
+        </select><br>
+        <input type="text" id="departmanListe" placeholder="Departman Girin" style="display:none;"><br>
+        <button onclick="calisanListele()">Listele</button>
+
+        <!-- Çıktı Alanı -->
+        <h3>Çıktı</h3>
+        <div id="sonuc"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
